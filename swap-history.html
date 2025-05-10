@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- Meta setup -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="">
+		<meta name="decription" content="">
+		<meta name="designer" content="">
+		
+		<!-- Title -->
+		<title>Swap History - STYX</title>
+		
+		<!-- Fav Icon -->
+		<link rel="icon" href="images/favicon.ico">
+		
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="./FontAwesome6Pro/css/all.min.css">
+
+		<!-- Include Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		
+		<!-- Main StyleSheet -->
+		<link rel="stylesheet" href="style.css">	
+		
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/responsive.css">	
+		
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+	
+		<main class="dashboard_main">
+			<div class="container-fluid m-0 p-0">
+				<div class="row g-0 m-0">
+					<!-- DASHBOARD ASIDE HERE -->
+					<div class="col-3 aside_col">
+						<aside>
+							<div class="sideLogo">
+								<a href="#"><img src="images/logo/logo_main.svg" alt=""></a>
+							</div>
+							<div class="sideMenu_content">
+								<ul>
+									<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
+									<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+									<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
+									<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+					<!-- DASHBOARD RIGHT SIDE HERE -->
+					<div class="col-9 dashboardRight_col">
+						<div class="dashboardRight_main">
+							<div class="dashboardRightMain_header">
+								<div class="row m-0 g-0 align-items-stretch">
+									<div class="col-md-7 col-10">
+										<div class="dbrmh_left">
+											<div class="hamburger d-block d-lg-none align-self-center" id="hamburger-6" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+												<span class="line"></span>
+												<span class="line"></span>
+												<span class="line"></span>
+											</div>
+											<ul>
+												<li><img class="logo" src="images/logo/logo_main.svg" alt=""></li>
+												<li>
+													<h6 class="name">Jhon Duo</h6>
+													<h5 class="balance">0.00 USD</h5>
+												</li>
+											</ul>
+											<button type="button" onclick="location.href='./wallet-selection.html'" class="drmh_addBtn d-none d-sm-block"><i class="fa-regular fa-plus"></i></button>
+										</div>
+									</div>
+									<div class="col-md-5 col-2">
+										<div class="dbrmh_right">
+											<ul>
+												<li><i class="fa-regular fa-bell"></i></li>
+												<li class="d-none d-lg-flex">
+													<div class="dropdown">
+														<button class="dbrmhr_user" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+															<img class="icon" src="images/icon/icon2.svg" alt="">
+															<span class="name">Jhon Duo</span>
+														</button>
+														<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change name</a></li>
+														  <li><a class="dropdown-item" href="#">Settings</a></li>
+														  <li><a class="dropdown-item logout" href="#">Logout <i class="fa-regular fa-right-from-bracket"></i></a></li>
+														</ul>
+													  </div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dashboardRightMain_body">
+								<div class="swapbody_wrapper">
+									<ul class="swapHeader_link">
+										<li><a href="./swap.html">Swap</a></li>
+										<li><a href="./swap-history.html" class="active">Swap history</a></li>
+									</ul>
+									<div class="swap_NoHistory">
+										<h6><img src="images/icon/transaction-history.svg" alt="">No history able</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<!-- offcanvas here -->
+		<div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+			<aside class="mobile_sidebar">
+				<div class="sideMenu_content pt-0">
+					<ul>
+						<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
+						<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+						<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
+						<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+					</ul>
+				</div>
+				<div class="drmhMobileBalace_content">
+					<div class="dbrmh_right">
+						<ul>
+							<li class="d-none"><i class="fa-regular fa-bell"></i></li>
+							<li>
+								<div class="dropdown">
+									<button class="dbrmhr_user" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+										<img class="icon" src="images/icon/icon2.svg" alt="">
+										<span class="name">Jhon Duo</span>
+									</button>
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change name</a></li>
+									  <li><a class="dropdown-item" href="#">Settings</a></li>
+									  <li><a class="dropdown-item logout" href="#">Logout <i class="fa-regular fa-right-from-bracket"></i></a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>	
+		</div>
+
+		<!-- popup 1 here -->
+		<div class="modal newAccount fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="newAccount_popup_wrapper position-relative">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><img src="images/icon/icon17.svg" alt=""></button>
+						<div class="newAccountPopup_header">
+							<img class="vector" src="images/vector/vector1.png" alt="">
+							<h3>New account name</h3>
+							<h6>Enter a new account name</h6>
+						</div>
+						<form action="">
+							<div class="row g-2 m-0">
+								<div class="col-12">
+									<div class="form_input">
+										<span>new account name</span>
+										<input type="text" placeholder="Type a user name">
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form_btn">
+										<button type="button" class="back" data-bs-dismiss="modal" aria-label="Close">Back</button>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form_btn">
+										<button type="button" class="changeName">Change name</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Send 3 popup here -->
+		<div class="modal newAccount fade sendPopup1 sendPopup3 swap_Modal" id="sendPopup3" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="newAccount_popup_wrapper position-relative">
+						<div class="sucessfully_sent">
+							<h4 class="text-center">Bitcoin <span style="color: #FCAD4E;">BTC</span> <br> <span style="color: #6A7785;">Swap to</span> <br> Ethuriam <span style="color: #0029FF;">ETH</span></h4>
+							<img class="vector" src="images/vector/vector8.png" alt="">
+							<span>Sucessfully sent 12.9477 BTC</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Main jQuery -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		
+		<!-- Bootstrap.bundle Script -->
+		<script src="js/bootstrap.bundle.min.js"></script>
+
+		<!-- plugin script -->
+		<script src="js/pie-chart.js"></script>
+		<script src="js/apexcharts.js"></script>
+
+		<!-- Custom jQuery -->
+		<script src="js/scripts.js"></script>
+
+		<script>
+			document.querySelectorAll('.custom-select-wrapper').forEach(customSelect => {
+  const selected = customSelect.querySelector('.custom-select');
+  const options = customSelect.querySelector('.custom-options');
+  const optionItems = customSelect.querySelectorAll('.custom-option');
+
+  selected.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = options.style.display === "block";
+    document.querySelectorAll('.custom-options').forEach(opt => {
+      if (opt !== options) opt.style.display = "none";
+    });
+    options.style.display = isOpen ? "none" : "block";
+  });
+
+  optionItems.forEach(option => {
+    option.addEventListener("click", () => {
+      const imgSrc = option.querySelector("img").src;
+      const newP = option.querySelector("p").cloneNode(true);
+
+      selected.querySelector("img").src = imgSrc;
+      selected.replaceChild(newP, selected.querySelector("p"));
+
+      options.style.display = "none";
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!customSelect.contains(e.target)) {
+      options.style.display = "none";
+    }
+  });
+});
+
+		</script>
+		
+	</body>
+</html>

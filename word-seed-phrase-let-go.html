@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- Meta setup -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="">
+		<meta name="decription" content="">
+		<meta name="designer" content="">
+		
+		<!-- Title -->
+		<title>word seed phrase let go - STYX</title>
+		
+		<!-- Fav Icon -->
+		<link rel="icon" href="images/favicon.ico">
+		
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+		<!-- Include Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		
+		<!-- Main StyleSheet -->
+		<link rel="stylesheet" href="style.css">	
+		
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/responsive.css">	
+		
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+		<div class="onboarding_wrapper createAnAccount position-relative px-4">
+			<a href="./word-seed-phrase.html" class="caaBackBtn"><img src="images/icon/icon1.svg" alt=""> Back</a>
+			<div class="walletSelection_wrapper backupWallet">
+				<div class="walletSelection_logo">
+					<a href="#"><img src="images/logo/logo.png" alt=""></a>
+				</div>
+				<div class="walletSelection_Card backupWallet">
+					<div class="backupWallet_body">
+						<img src="images/vector/vector6.png" alt="">
+						<h3>Backup wallet</h3>
+						<p>Create Wallet for 12 word seed <br> phrase and backup it now</p>
+					</div>
+					<div class="backupWallet_footer">
+						<label for="agreeCheckbox"><input type="radio" id="agreeCheckbox"> <h6>I understand that if i loss my recovery words i will not be able to access my wallet</h6></label>
+						<button id="submitButton" type="button" disabled onclick="location.href='./word-seed-phrase-process.html'">Generate 12 word seed</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		
+		
+		<!-- Main jQuery -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		
+		<!-- Bootstrap.bundle Script -->
+		<script src="js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Custom jQuery -->
+		<script src="js/scripts.js"></script>
+
+		<script>
+			// radio checked button active script
+			const checkbox = document.getElementById('agreeCheckbox');
+			const button = document.getElementById('submitButton');
+
+			checkbox.addEventListener('change', function() {
+				if (checkbox.checked) {
+					button.removeAttribute('disabled');
+				} else {
+					button.setAttribute('disabled', 'true');
+				}
+			});
+		</script>
+	</body>
+</html>

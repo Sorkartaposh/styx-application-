@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- Meta setup -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="">
+		<meta name="decription" content="">
+		<meta name="designer" content="">
+		
+		<!-- Title -->
+		<title>word seed phrase confirm - STYX</title>
+		
+		<!-- Fav Icon -->
+		<link rel="icon" href="images/favicon.ico">
+		
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+		<!-- Include Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		
+		<!-- Main StyleSheet -->
+		<link rel="stylesheet" href="style.css">	
+		
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/responsive.css">	
+		
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+		<div class="onboarding_wrapper createAnAccount position-relative px-4">
+			<a href="./confirm-password.html" class="caaBackBtn"><img src="images/icon/icon1.svg" alt=""> Back</a>
+			<div class="walletSelection_wrapper seedPhraseProcess">
+				<div class="walletSelection_logo">
+					<a href="#"><img src="images/logo/logo.png" alt=""></a>
+				</div>
+				<div class="seedPhraseProcess_content">
+					<div class="seedPhraseProcess_title">
+						<h3>Confirm your backup phrase</h3>
+						<p>Re enter your 12 word backup phrase</p>
+					</div>
+					<form action="">
+						<div class="seedPhraseConfirm_item_wrapper">
+							<div class="row g-3">
+								<div class="col-lg-3 col-6">
+									<div class="form_input">
+										<span class="number">4</span>
+										<input type="text">
+									</div>
+									<div class="formInput_data">
+										<button type="button" class="fid_btn">jhun</button>
+									</div>
+								</div>
+								<div class="col-lg-3 col-6">
+									<div class="form_input">
+										<span class="number">9</span>
+										<input type="text">
+									</div>
+									<div class="formInput_data">
+										<button type="button"  class="fid_btn">assaer</button>
+									</div>
+								</div>
+								<div class="col-lg-3 col-6">
+									<div class="form_input">
+										<span class="number">5</span>
+										<input type="text">
+									</div>
+									<div class="formInput_data">
+										<button type="button"  class="fid_btn">likes</button>
+									</div>
+								</div>
+								<div class="col-lg-3 col-6">
+									<div class="form_input">
+										<span class="number">2</span>
+										<input type="text">
+									</div>
+									<div class="formInput_data">
+										<button type="button"  class="fid_btn">jhun</button>
+									</div>
+								</div>
+							</div>
+							<div class="wrong_phrase_msg d-none">
+								The phrase is invalid . check if you entered your words...
+							</div>
+						</div>
+						<div class="seedPhraseProcess_btn seedPhraseConfirm">
+							<button type="button" disabled onclick="location.href='./wallet-create-done.html'">Create wallet</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Main jQuery -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		
+		<!-- Bootstrap.bundle Script -->
+		<script src="js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Custom jQuery -->
+		<script src="js/scripts.js"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const wrapper = document.querySelector('.seedPhraseConfirm_item_wrapper');
+				const inputs = wrapper.querySelectorAll('input');
+				const createWalletBtn = document.querySelector('.seedPhraseProcess_btn.seedPhraseConfirm button');
+
+				// Function to check if all inputs are filled
+				function validateInputs() {
+					const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+					createWalletBtn.disabled = !allFilled;
+				}
+
+				// Input typing handler
+				inputs.forEach(input => {
+					input.addEventListener('input', function () {
+						validateInputs();
+
+						// Hide corresponding .fid_btn if input has value
+						if (input.value.trim() !== '') {
+							const fidBtn = input.closest('.form_input').nextElementSibling?.querySelector('.fid_btn');
+							if (fidBtn) {
+								fidBtn.style.display = 'none';
+							}
+						}
+					});
+				});
+
+				// Button click to inject value into input
+				wrapper.addEventListener('click', function (e) {
+					if (e.target.classList.contains('fid_btn')) {
+						const button = e.target;
+						const itemWrapper = button.closest('.formInput_data').previousElementSibling;
+
+						if (itemWrapper && itemWrapper.querySelector('input')) {
+							const input = itemWrapper.querySelector('input');
+							input.value = button.textContent.trim();
+							validateInputs();
+							button.style.display = 'none'; // Hide after click
+						}
+					}
+				});
+			});
+
+		</script>
+	</body>
+</html>

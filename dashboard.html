@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<!-- Meta setup -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="">
+		<meta name="decription" content="">
+		<meta name="designer" content="">
+		
+		<!-- Title -->
+		<title>Dashboard - STYX</title>
+		
+		<!-- Fav Icon -->
+		<link rel="icon" href="images/favicon.ico">
+		
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="./FontAwesome6Pro/css/all.min.css">
+
+		<!-- Include Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		
+		<!-- Main StyleSheet -->
+		<link rel="stylesheet" href="style.css">	
+		
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/responsive.css">	
+		
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+	
+		<main class="dashboard_main">
+			<div class="container-fluid m-0 p-0">
+				<div class="row g-0 m-0">
+					<!-- DASHBOARD ASIDE HERE -->
+					<div class="col-3 aside_col">
+						<aside>
+							<div class="sideLogo">
+								<a href="#"><img src="images/logo/logo_main.svg" alt=""></a>
+							</div>
+							<div class="sideMenu_content">
+								<ul>
+									<li><a href="./dashboard.html" class="active"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
+									<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+									<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
+									<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+					<!-- DASHBOARD RIGHT SIDE HERE -->
+					<div class="col-9 dashboardRight_col">
+						<div class="dashboardRight_main">
+							<div class="dashboardRightMain_header">
+								<div class="row m-0 g-0 align-items-stretch">
+									<div class="col-md-7 col-10">
+										<div class="dbrmh_left">
+											<div class="hamburger d-block d-lg-none align-self-center" id="hamburger-6" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+												<span class="line"></span>
+												<span class="line"></span>
+												<span class="line"></span>
+											</div>
+											<ul>
+												<li><img class="logo" src="images/logo/logo_main.svg" alt=""></li>
+												<li>
+													<h6 class="name">Jhon Duo</h6>
+													<h5 class="balance">0.00 USD</h5>
+												</li>
+											</ul>
+											<button type="button" onclick="location.href='./wallet-selection.html'" class="drmh_addBtn d-none d-sm-block"><i class="fa-regular fa-plus"></i></button>
+										</div>
+									</div>
+									<div class="col-md-5 col-2">
+										<div class="dbrmh_right">
+											<ul>
+												<li><i class="fa-regular fa-bell"></i></li>
+												<li class="d-none d-lg-flex">
+													<div class="dropdown">
+														<button class="dbrmhr_user" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+															<img class="icon" src="images/icon/icon2.svg" alt="">
+															<span class="name">Jhon Duo</span>
+														</button>
+														<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change name</a></li>
+														  <li><a class="dropdown-item" href="#">Settings</a></li>
+														  <li><a class="dropdown-item logout" href="#">Logout <i class="fa-regular fa-right-from-bracket"></i></a></li>
+														</ul>
+													  </div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dashboardRightMain_body">
+								<div class="row m-0 gx-3 gy-3 gy-xl-0 justify-content-center">
+									<div class="col-xl-8 ps-xl-0">
+										<div class="walletBalanceChart_wrapper">
+											<div class="walletBalanceChart_header">
+												<div class="row g-2 m-0">
+													<div class="col-lg-5 ps-lg-0">
+														<div class="walletBalanceChart_title">
+															<h4>Wallet Balance</h4>
+															<h3>109.00 USD</h3>
+														</div>
+													</div>
+													<div class="col-lg-7">
+														<div class="walletBalanceChart_dateFilter">
+															<ul>
+																<li>Daily</li>
+																<li>Weekly</li>
+																<li class="active">Monthly</li>
+																<li>Yearly</li>
+															</ul>
+															<p>Current Year 2025</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- chart here -->
+											<div class="walletBalance_Chart">
+												<div id="apex-chart"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 pe-xl-0">
+										<div class="walletSummary_wrapper">
+											<div class="walletSummary_pie position-relative">
+												<div id="walletpie" class="pie-title-center" data-percent="90"> 
+													<div class="walletSummarypie_content">
+														<h5 class="name">Jhon Duo</h5>
+														<h4 class="balance">109.00</h4>
+														<h6>USD</h6>
+													</div>
+												</div>
+											</div>
+											<div class="walletSummary_progress">
+												<div class="row m-0 gx-1 align-items-center">
+													<div class="col-2">
+														<div class="wsp_coin btc">BTC</div>
+													</div>
+													<div class="col-10">
+														<div class="walletSp_bar">
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+															<span class="percent">80%</span>
+														</div>
+													</div>
+												</div>
+												<div class="row m-0 gx-1 align-items-center">
+													<div class="col-2">
+														<div class="wsp_coin usdt">USDT</div>
+													</div>
+													<div class="col-10">
+														<div class="walletSp_bar">
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+															<span class="percent">80%</span>
+														</div>
+													</div>
+												</div>
+												<div class="row m-0 gx-1 align-items-center">
+													<div class="col-2">
+														<div class="wsp_coin bnb">BNB</div>
+													</div>
+													<div class="col-10">
+														<div class="walletSp_bar">
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+															<span class="percent">80%</span>
+														</div>
+													</div>
+												</div>
+												<div class="row m-0 gx-1 align-items-center">
+													<div class="col-2">
+														<div class="wsp_coin eth">ETH</div>
+													</div>
+													<div class="col-10">
+														<div class="walletSp_bar">
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+															<span class="percent">80%</span>
+														</div>
+													</div>
+												</div>
+												<div class="row m-0 gx-1 align-items-center">
+													<div class="col-2">
+														<div class="wsp_coin usd">USD</div>
+													</div>
+													<div class="col-10">
+														<div class="walletSp_bar">
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+															<span class="percent">80%</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="coinAssetTable_wrapper">
+									<div class="coinAssetTable_header">
+										<h3 class="title">Active Assets</h3>
+										<input type="search" placeholder="Search assets...">
+										<div class="coinAssetTableHeader_btn">
+											<button type="button"><i class="fa-solid fa-sliders"></i></button>
+											<button type="button"><i class="fa-solid fa-grid-2"></i></button>
+										</div>
+									</div>
+									<div class="coinAsset_table">
+										<table>
+											<tr>
+												<th>Asset name</th>
+												<th>Balance</th>
+												<th>Value</th>
+												<th>Price</th>
+												<th>24H chg %</th>
+												<th>Portfolio</th>
+												<th>Market Cap</th>
+												<th>
+													<select>
+														<option value="Weekly">Weekly</option>
+														<option value="Weekly">Monthly</option>
+														<option value="Weekly">Yearly</option>
+													</select>
+												</th>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="assetName_data">
+														<ul>
+															<li><img src="images/icon/icon5.svg" alt=""></li>
+															<li>
+																<h4>Bitcoin</h4>
+																<h5>BTC</h5>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+													<div class="balance_data">
+														<h5>0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>$0.00</h5>
+													</div>
+												</td>
+												<td>
+													<div class="price_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="chg24h_data">
+														<h5>$1276.30</h5>
+													</div>
+												</td>
+												<td>
+													<div class="value_data">
+														<h5>0.00%</h5>
+													</div>
+												</td>
+												<td>
+													<div class="marketCap_data">
+														<h5>$1276.30<span>B</span></h5>
+													</div>
+												</td>
+												<td>
+													<div class="chartOverview_data">
+														<img src="images/thumb/thumb7.png" alt="">
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<button type="button" class="tableAddAsstes"><img src="images/icon/icon9.svg" alt=""> Add assets</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<!-- offcanvas here -->
+		<div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+			<aside class="mobile_sidebar">
+				<div class="sideMenu_content pt-0">
+					<ul>
+						<li><a href="./dashboard.html" class="active"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
+						<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+						<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
+						<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+					</ul>
+				</div>
+				<div class="drmhMobileBalace_content">
+					<div class="dbrmh_right">
+						<ul>
+							<li class="d-none"><i class="fa-regular fa-bell"></i></li>
+							<li>
+								<div class="dropdown">
+									<button class="dbrmhr_user" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+										<img class="icon" src="images/icon/icon2.svg" alt="">
+										<span class="name">Jhon Duo</span>
+									</button>
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change name</a></li>
+									  <li><a class="dropdown-item" href="#">Settings</a></li>
+									  <li><a class="dropdown-item logout" href="#">Logout <i class="fa-regular fa-right-from-bracket"></i></a></li>
+									</ul>
+								  </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>	
+		</div>
+
+		<!-- popup 1 here -->
+		<div class="modal newAccount fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="newAccount_popup_wrapper position-relative">
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><img src="images/icon/icon17.svg" alt=""></button>
+						<div class="newAccountPopup_header">
+							<img class="vector" src="images/vector/vector1.png" alt="">
+							<h3>New account name</h3>
+							<h6>Enter a new account name</h6>
+						</div>
+						<form action="">
+							<div class="row g-2 m-0">
+								<div class="col-12">
+									<div class="form_input">
+										<span>new account name</span>
+										<input type="text" placeholder="Type a user name">
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form_btn">
+										<button type="button" class="back" data-bs-dismiss="modal" aria-label="Close">Back</button>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form_btn">
+										<button type="button" class="changeName">Change name</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Main jQuery -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		
+		<!-- Bootstrap.bundle Script -->
+		<script src="js/bootstrap.bundle.min.js"></script>
+
+		<!-- plugin script -->
+		<script src="js/pie-chart.js"></script>
+		<script src="js/apexcharts.js"></script>
+
+		<!-- Custom jQuery -->
+		<script src="js/scripts.js"></script>
+
+		<script>
+			const chartData = {
+				daily: {
+					categories: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+					series: [60, 75, 65, 80, 70, 85, 78] // up-down pattern
+				},
+				weekly: {
+					categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+					series: [70, 60, 85, 75] // zigzag pattern
+				},
+				monthly: {
+					categories: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+					series: [65, 78, 72, 88, 70, 95, 80, 110] // natural wave
+				},
+				yearly: {
+					categories: ['2021', '2022', '2023', '2024', '2025'],
+					series: [60, 90, 70, 100, 85] // up-down yearly trend
+				}
+				};
+				const options = {
+				chart: {
+					type: 'line',
+					height: 350,
+					toolbar: { show: false },
+					background: 'transparent'
+				},
+				series: [{ name: 'Price', data: chartData.monthly.series }],
+				xaxis: {
+					categories: chartData.monthly.categories,
+					labels: { style: { colors: '#94a3b8' } }
+				},
+				yaxis: {
+					min: 10,
+					max: 110,
+					tickAmount: 10,
+					labels: { style: { colors: '#94a3b8' } }
+				},
+				tooltip: {
+					theme: 'dark',
+					x: {
+					show: true // ❌ Hide category label like "Apr", "Week 1", etc.
+					},
+					y: {
+					title: {
+						formatter: () => '' // ❌ Hide "Price" or "1"
+					},
+					formatter: val => `$${val.toFixed(2)}` // ✅ Only show price
+					}
+				},
+				markers: {
+					size: 0,
+					hover: { size: 6, sizeOffset: 3 },
+					strokeColors: '#9333EA',
+					colors: ['#9333EA']
+				},
+				stroke: {
+					curve: 'smooth',
+					width: 3,
+					colors: ['#3B82F6']
+				},
+				grid: {
+					borderColor: '#1e293b'
+				}
+				};
+
+				const chart = new ApexCharts(document.querySelector("#apex-chart"), options);
+				chart.render();
+
+				// Filter click logic
+				const filterItems = document.querySelectorAll(".walletBalanceChart_dateFilter ul li");
+				filterItems.forEach(item => {
+					item.addEventListener("click", () => {
+					// Remove active class from all
+					filterItems.forEach(i => i.classList.remove("active"));
+					item.classList.add("active");
+
+					const label = item.textContent.toLowerCase();
+					chart.updateOptions({
+						series: [{ data: chartData[label].series }],
+						xaxis: { categories: chartData[label].categories }
+					});
+					});
+				});
+  
+		</script>
+	</body>
+</html>
