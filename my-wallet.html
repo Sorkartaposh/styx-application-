@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="css/responsive.css">	
 		
 	</head>
-	<body>
+	<body class="myWallet_page">
 		<!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -46,6 +46,7 @@
 								<ul>
 									<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
 									<li><a href="./my-wallet.html" class="active"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+									<li><a href="./swap.html"><i class="fa-regular fa-shuffle"></i> swap</a></li>
 									<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
 									<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
 								</ul>
@@ -132,7 +133,7 @@
 											<ul class="usdt" onclick="location.href='./my-wallet-usdt.html'">
 												<li><img src="images/icon/tether.svg" alt=""></li>
 												<li>
-													<h5>Tether</h5>
+													<h5>USDT</h5>
 													<h6><span>0.00</span> USDT</h6>
 												</li>
 											</ul>
@@ -187,6 +188,7 @@
 					<ul>
 						<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
 						<li><a href="./my-wallet.html" class="active"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+						<li><a href="./swap.html"><i class="fa-regular fa-shuffle"></i> swap</a></li>
 						<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
 						<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
 					</ul>
@@ -260,7 +262,7 @@
 						<div class="newAccountPopup_header">
 							<img class="vector" src="images/icon/icon10.svg" alt="">
 							<h3>Send Bitcoin <span>BTC</span></h3>
-							<h6>Scan or select a receiver address from your contact book.</h6>
+							<h6>Please paste your receiver address from your clipboard. </h6>
 						</div>
 						<form action="">
 							<div class="row g-2 m-0">
@@ -296,7 +298,6 @@
 						<div class="newAccountPopup_header">
 							<img class="vector" src="images/icon/icon10.svg" alt="">
 							<h3>Send Bitcoin <span>BTC</span></h3>
-							<h6>Scan or select a receiver address from your contact book.</h6>
 						</div>
 						<form action="">
 							<div class="row g-2 m-0">
@@ -304,12 +305,20 @@
 									<div class="form_input position-relative">
 										<span>BTC</span>
 										<input class="btc" type="text" placeholder="0.00000000">
+										<div class="row m-0 g-2 minMax_btn_wrapper">
+											<div class="col-4 ps-0"><h5>MIN</h5></div>
+											<div class="col-4"><h5>HALF</h5></div>
+											<div class="col-4 pe-0"><h5>MAX</h5></div>
+										</div>
 									</div>
 								</div>
 								<div class="col-6">
 									<div class="form_input position-relative">
 										<span>USD</span>
-										<input type="text" placeholder="$0">
+										<input class="text-white" type="text" placeholder="$0">
+										<div class="row m-0 g-2">
+											<div class="col-12 ps-0"><p class="expectValue_para">The value of your expected amount in BTC will show above</p></div>
+										</div>
 									</div>
 								</div>
 								<div class="col-6">

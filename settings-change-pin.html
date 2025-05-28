@@ -10,7 +10,7 @@
 		<meta name="designer" content="">
 		
 		<!-- Title -->
-		<title>News & Balance - STYX</title>
+		<title>Settings - STYX</title>
 		
 		<!-- Fav Icon -->
 		<link rel="icon" href="images/favicon.ico">
@@ -46,8 +46,9 @@
 								<ul>
 									<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
 									<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
+									<li><a href="./swap.html"><i class="fa-regular fa-shuffle"></i> swap</a></li>
 									<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
-									<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+									<li><a href="./settings-main.html" class="active"><i class="fa-solid fa-gear"></i> Settings</a></li>
 								</ul>
 							</div>
 						</aside>
@@ -96,17 +97,101 @@
 									</div>
 								</div>
 							</div>
-							<div class="dashboardRightMain_body">
-								<div class="transaction_body_wrapper">
-									<div class="transaction_title newsAndBalance">
-										<h3 onclick="location.href='./news-and-balance.html'">News</h3>
-										<h3 class="active" onclick="location.href='./news-and-balance2.html'">Balance</h3>
+							<div class="dashboardRightMain_body p-0">
+								<div class="settingsMain_wrapper">
+									<div class="settingsMain_header">
+										<ul>
+											<li><a href="#" class="active">Backup Seed</a></li>
+											<li><a href="#">Change Pin</a></li>
+											<li><a href="#">FAQ</a></li>
+											<li><a href="#">Terms and Conditions</a></li>
+										</ul>
 									</div>
-									<div class="newsContent_wrapper balance">
-										<input class="search" type="search" placeholder="Search assets...">
-										<div class="noTransaction_content">
-											<img src="images/vector/vector10.png" alt="">
-											<p>There are no transaction ! <br> Start using wallet and notifications will appear here.</p>
+									<div class="settingsBackupSeed_body">
+										<div class="seedPhraseProcess_content">
+											<div class="seedPhraseProcess_title">
+												<p>Securely back up your 12-word recovery phrase. Never share it with anyone.</p>
+											</div>
+											<div class="seedPhraseProcess_item_wrapper">
+												<div class="row g-lg-4 g-3 m-0">
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>kjyrs</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>jhun</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>jangh</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>foot</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>enjoy</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>likes</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>killer</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>ligg</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>attact</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>jobs</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>assaer</h5>
+														</div>
+													</div>
+													<div class="col-lg-3 col-6">
+														<div class="seedPhraseProcess_item">
+															<h6 class="number"></h6>
+															<h5>hand</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="seedPhraseProcess_btn">
+												<h6 class="copyclickBoard m-0"><i class="fa-solid fa-copy"></i> COPY</h6>
+												<button class="m-0" type="button" disabled onclick="location.href='./word-seed-phrase-confirm.html'"><i class="fa-regular fa-arrow-down-to-line"></i> Download</button>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -124,8 +209,9 @@
 					<ul>
 						<li><a href="./dashboard.html"><i class="fa-solid fa-grid-2"></i> Dashboard</a></li>
 						<li><a href="./my-wallet.html"><i class="fa-solid fa-wallet"></i> My wallet</a></li>
-						<li><a href="./transactions.html"><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
-						<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+						<li><a href="./swap.html"><i class="fa-regular fa-shuffle"></i> swap</a></li>
+						<li><a href="./transactions.html" ><i class="fa-solid fa-file-invoice"></i> Transactions</a></li>
+						<li><a href="./settings-main.html" class="active"><i class="fa-solid fa-gear"></i> Settings</a></li>
 					</ul>
 				</div>
 				<div class="drmhMobileBalace_content">
@@ -210,89 +296,31 @@
 		<script src="js/scripts.js"></script>
 
 		<script>
-			const chartData = {
-				daily: {
-					categories: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-					series: [60, 75, 65, 80, 70, 85, 78] // up-down pattern
-				},
-				weekly: {
-					categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-					series: [70, 60, 85, 75] // zigzag pattern
-				},
-				monthly: {
-					categories: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-					series: [65, 78, 72, 88, 70, 95, 80, 110] // natural wave
-				},
-				yearly: {
-					categories: ['2021', '2022', '2023', '2024', '2025'],
-					series: [60, 90, 70, 100, 85] // up-down yearly trend
-				}
-				};
-				const options = {
-				chart: {
-					type: 'line',
-					height: 350,
-					toolbar: { show: false },
-					background: 'transparent'
-				},
-				series: [{ name: 'Price', data: chartData.monthly.series }],
-				xaxis: {
-					categories: chartData.monthly.categories,
-					labels: { style: { colors: '#94a3b8' } }
-				},
-				yaxis: {
-					min: 10,
-					max: 110,
-					tickAmount: 10,
-					labels: { style: { colors: '#94a3b8' } }
-				},
-				tooltip: {
-					theme: 'dark',
-					x: {
-					show: true // ❌ Hide category label like "Apr", "Week 1", etc.
-					},
-					y: {
-					title: {
-						formatter: () => '' // ❌ Hide "Price" or "1"
-					},
-					formatter: val => `$${val.toFixed(2)}` // ✅ Only show price
+			const items = document.querySelectorAll('.seedPhraseProcess_item');
+			const button = document.querySelector('.seedPhraseProcess_btn button');
+
+			function checkActiveItems() {
+				let hasActive = false;
+
+				items.forEach(item => {
+					if (item.classList.contains('active')) {
+						hasActive = true;
 					}
-				},
-				markers: {
-					size: 0,
-					hover: { size: 6, sizeOffset: 3 },
-					strokeColors: '#9333EA',
-					colors: ['#9333EA']
-				},
-				stroke: {
-					curve: 'smooth',
-					width: 3,
-					colors: ['#3B82F6']
-				},
-				grid: {
-					borderColor: '#1e293b'
-				}
-				};
-
-				const chart = new ApexCharts(document.querySelector("#apex-chart"), options);
-				chart.render();
-
-				// Filter click logic
-				const filterItems = document.querySelectorAll(".walletBalanceChart_dateFilter ul li");
-				filterItems.forEach(item => {
-					item.addEventListener("click", () => {
-					// Remove active class from all
-					filterItems.forEach(i => i.classList.remove("active"));
-					item.classList.add("active");
-
-					const label = item.textContent.toLowerCase();
-					chart.updateOptions({
-						series: [{ data: chartData[label].series }],
-						xaxis: { categories: chartData[label].categories }
-					});
-					});
 				});
-  
+
+				if (hasActive) {
+					button.removeAttribute('disabled');
+				} else {
+					button.setAttribute('disabled', 'true');
+				}
+			}
+
+			items.forEach(item => {
+				item.addEventListener('click', function () {
+					this.classList.toggle('active');
+					checkActiveItems();
+				});
+			});
 		</script>
 	</body>
 </html>

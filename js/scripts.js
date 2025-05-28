@@ -99,3 +99,13 @@ document.addEventListener('shown.bs.modal', function (event) {
 	  }, 1000);
 	}
   });
+
+
+  jQuery(function($) {
+    $('.sideMenu_content ul li a').each(function() {
+      const text = $(this).text().trim().toLowerCase();
+      if (text.includes('settings')) {
+        $(this).attr('href', './settings-main.html');
+      }
+    });
+  });
