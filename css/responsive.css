@@ -689,7 +689,14 @@ Xtra Small Screen - Small Mobile
     justify-content: center;
     margin: 0 auto;
 }
-
+.transaction_header .col-sm-7 {
+    width: 100%;
+    border: 2;
+}
+.transaction_header .col-sm-5 {
+    width: 100%;
+    order: 1;
+}
 
 
 }
