@@ -2109,7 +2109,7 @@ body.myWallet_page .newAccountPopup_header > h6 {
     line-height: 112%;
 }
 .transaction_title {
-    padding-top: 105px;
+    padding-top: 70px;
     padding-bottom: 24px;
     border-bottom: 2px solid #2A273F;
 }
@@ -2784,4 +2784,228 @@ border-top: 6px solid #83A0BE;
     width: 100%;
     max-width: 485px;
     margin: 0 auto;
+}
+.transaction_filter {
+    position: relative;
+    width: 100%;
+}
+
+.transaction_filter .filter-button {
+    background-color: #2a2340;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border: none;
+    color: #4B4567;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 112%;
+    width: 100%;
+    min-height: 55px;
+}
+
+.transaction_filter .filter-button span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transaction_filter .filter-button svg {
+    margin-right: 8px;
+    fill: #857e9b;
+}
+
+.transaction_filter .filter-button.selected {
+    color: white;
+}
+
+.transaction_filter .filter-button.selected svg {
+    fill: white;
+}
+
+.transaction_filter .arrow {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    margin-left: 10px;
+}
+
+.transaction_filter .dropdown-options {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: #2a2340;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.transaction_filter .dropdown-options.show {
+    display: block;
+}
+
+.transaction_filter .dropdown-options div {
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #857e9b;
+    transition: background 0.2s, color 0.2s;
+}
+
+.transaction_filter .dropdown-options div:hover,
+.transaction_filter .dropdown-options div.active {
+    background-color: #3a2e55;
+    color: white;
+}
+
+.transaction_search>input {
+    width: 100%;
+    min-height: 55px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #27233A;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 112%;
+    padding-left: 42px;
+    background-image: url(./images/icon/search.svg);
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.transaction_search>input::placeholder {
+    color: #595276;
+}
+
+
+/* --------------------------- */
+.custom-transaction-table {
+    color: #fff;
+    background: #111;
+    border-radius: 8px;
+    overflow: auto;
+    margin-top: 20px;
+    scrollbar-width: thin;
+}
+
+.custom-transaction-table table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.custom-transaction-table th,
+.custom-transaction-table td {
+    text-align: left;
+    background: #100D1D;
+}
+
+.custom-transaction-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid #1F1A37;
+}
+
+.custom-transaction-table th {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+    background-color: #07060E;
+    padding: 20px 0;
+}
+
+.custom-transaction-table th:first-child {
+    padding-left: 20px;
+}
+
+.custom-transaction-table td:first-child {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+    padding-left: 18px;
+}
+
+.custom-transaction-table td:first-child small {
+    color: #625794;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 112%;
+}
+
+.custom-transaction-table td:nth-child(3) {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+}
+
+.custom-transaction-table td:nth-child(6) {
+    color: #524686;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+}
+
+.custom-transaction-table td:nth-child(7) {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+}
+
+.custom-transaction-table td small {
+    font-size: 11px;
+    color: #666;
+}
+
+.custom-transaction-table .address {
+    color: #524686;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+}
+
+.custom-transaction-table .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.custom-transaction-table .status {
+    width: 81px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 112%;
+    border-radius: 3px;
+    padding: 10px;
+}
+.custom-transaction-table .status.confirmed {
+    color: #3AE367;
+    background: rgba(58, 227, 103, 0.30);
+
+}
+.custom-transaction-table .status.pending {
+    color: #FFEF3B;
+    background: rgba(255, 239, 59, 0.30);
+}
+.custom-transaction-table .status.failed {
+    color: #F00;
+    background: rgba(255, 0, 0, 0.30);
+
+}
+.custom-transaction-table img {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
 }

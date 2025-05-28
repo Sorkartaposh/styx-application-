@@ -97,126 +97,14 @@
 									</div>
 								</div>
 							</div>
-							
 							<div class="dashboardRightMain_body">
 								<div class="transaction_body_wrapper">
 									<div class="transaction_title">
 										<h3>Transactions</h3>
 									</div>
-									<div class="transaction_content_wrapper">
-										<div class="transaction_header">
-											<div class="row m-0 g-3">
-												<div class="col-sm-7 col-md-8 col-lg-9">
-													<div class="transaction_search">
-														<input type="search" placeholder="Search by address, amount, or ID">
-													</div>
-												</div>
-												<div class="col-sm-5 col-md-4 col-lg-3">
-													<div class="transaction_filter">
-														<button class="filter-button" onclick="toggleTransactionDropdown(this)">
-															<span>
-																<img src="images/icon/filter.svg" alt="">
-																<span class="filter-label">Filtered By</span>
-															</span>
-															<span class="arrow"></span>
-														</button>
-
-														<div class="dropdown-options">
-														<div onclick="selectTransactionOption(this)">Date & Time</div>
-														<div onclick="selectTransactionOption(this)">Sent</div>
-														<div onclick="selectTransactionOption(this)">Received</div>
-														<div onclick="selectTransactionOption(this)">Coin</div>
-														<div onclick="selectTransactionOption(this)">Amount</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										 
-										<!-- transaction table here -->
-										<div class="custom-transaction-table">
-											<table>
-												<thead>
-													<tr>
-														<th>Type</th>
-														<th>Coin</th>
-														<th>Amount</th>
-														<th>From/To</th>
-														<th>Status</th>
-														<th>TX Hash (short)</th>
-														<th>Fee</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															Sent<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="images/icon/icon_btc.svg" alt="BTC"></td>
-														<td>-0.015 BTC</td>
-														<td>To <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status confirmed">Confirmed</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-													<tr>
-														<td>
-															Sent<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="images/icon/icon_eth.svg" alt="ETH"></td>
-														<td>+2.5 ETH</td>
-														<td>From <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status pending">Pending</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-													<tr>
-														<td>
-															Received<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="./images/icon/icon_ltc.svg" alt="ltc"></td>
-														<td>+0.015 LTC</td>
-														<td>From <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status failed">failed</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-													<tr>
-														<td>
-															Received<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="./images/icon/icon_bnb.svg" alt="ltc"></td>
-														<td>-1.2 BNB</td>
-														<td>From <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status confirmed">Confirmed</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-													<tr>
-														<td>
-															sent<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="./images/icon/icon_usdt.svg" alt="ltc"></td>
-														<td>+0.015 USDT</td>
-														<td>From <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status failed">failed</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-													<tr>
-														<td>
-															sent<br><small>May 26, 2025 - 10:24 AM</small>
-														</td>
-														<td><img src="./images/icon/dodge.svg" alt="ltc"></td>
-														<td>+0.015 DOGE</td>
-														<td>From <span class="address">bc1q...ax3v</span></td>
-														<td><span class="status pending">pending</span></td>
-														<td>0×8f3e...9c6d</td>
-														<td>0.0002 BTC</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+									<div class="noTransaction_content">
+										<img src="images/vector/vector10.png" alt="">
+										<p>There are no transaction ! <br> Start using wallet and notifications will appear here.</p>
 									</div>
 								</div>
 							</div>
@@ -320,36 +208,89 @@
 		<script src="js/scripts.js"></script>
 
 		<script>
-			function toggleTransactionDropdown(button) {
-      const wrapper = button.closest('.transaction_filter');
-      const dropdown = wrapper.querySelector('.dropdown-options');
-      dropdown.classList.toggle('show');
-    }
+			const chartData = {
+				daily: {
+					categories: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+					series: [60, 75, 65, 80, 70, 85, 78] // up-down pattern
+				},
+				weekly: {
+					categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+					series: [70, 60, 85, 75] // zigzag pattern
+				},
+				monthly: {
+					categories: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+					series: [65, 78, 72, 88, 70, 95, 80, 110] // natural wave
+				},
+				yearly: {
+					categories: ['2021', '2022', '2023', '2024', '2025'],
+					series: [60, 90, 70, 100, 85] // up-down yearly trend
+				}
+				};
+				const options = {
+				chart: {
+					type: 'line',
+					height: 350,
+					toolbar: { show: false },
+					background: 'transparent'
+				},
+				series: [{ name: 'Price', data: chartData.monthly.series }],
+				xaxis: {
+					categories: chartData.monthly.categories,
+					labels: { style: { colors: '#94a3b8' } }
+				},
+				yaxis: {
+					min: 10,
+					max: 110,
+					tickAmount: 10,
+					labels: { style: { colors: '#94a3b8' } }
+				},
+				tooltip: {
+					theme: 'dark',
+					x: {
+					show: true // ❌ Hide category label like "Apr", "Week 1", etc.
+					},
+					y: {
+					title: {
+						formatter: () => '' // ❌ Hide "Price" or "1"
+					},
+					formatter: val => `$${val.toFixed(2)}` // ✅ Only show price
+					}
+				},
+				markers: {
+					size: 0,
+					hover: { size: 6, sizeOffset: 3 },
+					strokeColors: '#9333EA',
+					colors: ['#9333EA']
+				},
+				stroke: {
+					curve: 'smooth',
+					width: 3,
+					colors: ['#3B82F6']
+				},
+				grid: {
+					borderColor: '#1e293b'
+				}
+				};
 
-    function selectTransactionOption(option) {
-      const wrapper = option.closest('.transaction_filter');
-      const label = wrapper.querySelector('.filter-label');
-      const button = wrapper.querySelector('.filter-button');
-      const dropdown = wrapper.querySelector('.dropdown-options');
+				const chart = new ApexCharts(document.querySelector("#apex-chart"), options);
+				chart.render();
 
-      label.textContent = option.textContent;
+				// Filter click logic
+				const filterItems = document.querySelectorAll(".walletBalanceChart_dateFilter ul li");
+				filterItems.forEach(item => {
+					item.addEventListener("click", () => {
+					// Remove active class from all
+					filterItems.forEach(i => i.classList.remove("active"));
+					item.classList.add("active");
 
-      wrapper.querySelectorAll('.dropdown-options div').forEach(opt => opt.classList.remove('active'));
-      option.classList.add('active');
-
-      button.classList.add('selected');
-
-      dropdown.classList.remove('show');
-    }
-
-    document.addEventListener('click', function (e) {
-      document.querySelectorAll('.transaction_filter').forEach(wrapper => {
-        const dropdown = wrapper.querySelector('.dropdown-options');
-        if (!wrapper.contains(e.target)) {
-          dropdown.classList.remove('show');
-        }
-      });
-    });
+					const label = item.textContent.toLowerCase();
+					chart.updateOptions({
+						series: [{ data: chartData[label].series }],
+						xaxis: { categories: chartData[label].categories }
+					});
+					});
+				});
+  
 		</script>
 	</body>
 </html>
